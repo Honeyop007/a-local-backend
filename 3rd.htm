@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;
+color: #fff;">
+
+
+<ul class="lang">
+    <li>JavaScript</li>
+</ul>
+
+    <script>
+           //+++++++++++++++++++++++++++++++Adding
+        function change(language) {
+const listItem = document.createElement(`li`)
+const text = document.createTextNode(`${language}`)
+listItem.appendChild(text)
+ document.querySelector(`.lang`).appendChild(listItem)
+        }
+        change("python")
+        change("MySQL")
+        //+++++++++++++++++++++++++++++++Replacing
+        function repalce(lang) {
+ const changing = document.querySelector(`li:nth-child(2)`)
+ const listItem = document.createElement(`li`)
+const text = listItem.textContent= (`${lang}`)
+changing.replaceWith(listItem)
+
+        }
+        repalce("MOJO")
+
+// Bad Approach
+// const changing = document.querySelector(`li:nth-child(2)`)
+// changing.innerText="MongoDB"
+
+// removing an element
+
+ const Firstlang = document.querySelector(`li:first-child`)
+ Firstlang.remove(); 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;
+color: #fff;">
+
+
+<ul class="lang">
+    <li>JavaScript</li>
+    <li>HTML</li>
+    <li>python</li>
+    <li>MySQL</li>
+</ul>
+
+<script>
+// +++++++++++++++++++++++REVERSING
+function reverselist() {
+    const list = document.querySelector(`.lang`);
+    const items = Array.from(list.childNodes);
+    list.innerHTML="";
+items.reverse().forEach((item)=> list.appendChild(item));
+}
+reverselist();
+
+// +++++++++++++++++++++++INSERTING AT RANDOM POSITION
+
+function addAtRandomPos(content)
+{
+    const list = document.querySelector(`.lang`);
+    const items = Array.from(list.children);
+    const newItem = document.createElement('li');
+
+    newItem.textContent = content;
+
+const randomindex = Math.floor(Math.random () * (items.length+1));
+
+if(randomindex===items.length)
+{
+    list.appendChild(newItem);
+
+}
+else{
+    list.insertBefore(newItem,items[randomindex]);
+}
+
+}
+
+addAtRandomPos("C++");
+addAtRandomPos("FireBase");
+
+
+</script>
+</body>
+</html>
