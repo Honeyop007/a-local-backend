@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randowm background</title>
+    <style>
+        body {
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            color: #fff;
+            background-color: #212121;
+        }
+
+        div {
+            display: flex;
+            position: relative;
+            align-items: center;
+            height: 70vh;
+        }
+
+        button {
+            background-color: antiquewhite;
+            padding: 12px;
+            margin: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.5;
+            border-radius: 10px;
+            border: 2px solid black;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button type="submit" id="str">START</button>
+        <button type="submit" id="stp">STOP</button>
+    </div>
+
+
+    <script>
+        const randomColor = () => {
+            const hex = `123456789ABCDEF`
+            let color = `#`
+            for (let index = 0; index < 6; index++) {
+                color += hex[Math.floor(Math.random() * 16)];
+
+            }
+            return color;
+        }
+
+        const Startbtn = document.querySelector("#str");
+        const Stopbtn = document.querySelector("#stp");
+        let intervalID;
+        const changebgcolour = () => {
+            if (!intervalID) {
+               intervalID = setInterval(bgc, 1000)
+            }
+        }
+        const bgc = () => {
+            document.body.style.backgroundColor =randomColor();
+        }
+
+
+        const stop = () => {
+            clearInterval(intervalID);
+            intervalID = null;
+        }
+
+
+        Startbtn.addEventListener(`click`, changebgcolour)
+        Stopbtn.addEventListener(`click`,stop)
+    </script>
+</body>
+
+</html>
