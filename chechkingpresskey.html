@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randowm background</title>
+    <style>
+        body {
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            color: #fff;
+            background-color: #212121;
+        }
+
+        .project {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            position: relative;
+            height: 70vh;
+        }
+.color{
+    display:flex ;
+    flex-direction: row;
+    color: aliceblue;
+}
+        table,
+        th,
+        td {
+            border: 1px solid #efefef;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="project">
+        <div id="insert">
+            <div class="key">
+                This is a keypress checker
+            </div>
+        </div>
+    </div>
+
+    <script>
+const insert= document.getElementById(`insert`);
+window.addEventListener(`keydown`,(e)=>{
+insert.innerHTML=`
+<div class="color">
+<table>
+    <tr>
+<th>key</th>
+<th>keycode</th>
+<th>code</th>
+</tr>
+<tr>
+<td>${e.key === " " ? "space": e.key}</td>
+<td>${e.keyCode}</td>
+<td>${e.code}</td>
+</tr>
+</table>
+</div>`
+});
+
+
+
+    </script>
+</body>
+
+</html>
