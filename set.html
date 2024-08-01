@@ -7,10 +7,19 @@
 </head>
 <body>
     <h1>Honey is the Over Power</h1>
-
-
+<button type="submit">SUBMIT</button>
     <script>
-const change = function
+const change = function()
+{
+    const varr= document.querySelector(`h1`).innerHTML="<h2>Abdul HANAN IS GOOD guy</h2>"
+}
+const stopme = setTimeout(change,3000);
+
+const btn  = document.querySelector("button");
+btn.addEventListener(`click`,()=>{
+    clearTimeout(stopme);
+    console.log("STOPPED");
+});
 
     </script>
 </body>
