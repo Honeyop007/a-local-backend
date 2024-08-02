@@ -41,7 +41,7 @@ const promisethree = new Promise((res, rej) => {
             res({ id: "0399", Name: "Abdul Rehman" })
         } else {
             console.log("Promise three:");
-            rej('ERROR : page not found ');
+            rej('ERROR : info not found ');
         }
     }, 2000)
 })

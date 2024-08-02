@@ -7,6 +7,8 @@ try {
     console.log('E:', error);
 }
 }
+
+
 user();
 
 fetch('https://jsonplaceholder.typicode.com/users').then((res)=>{
